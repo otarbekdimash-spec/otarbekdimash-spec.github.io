@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天気アプリ - Японская Погода</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌸 日本風 天気アプリ</h1>
+        <p class="subtitle">Введите своё имя — покажу по-японски</p>
+        
+        <input type="text" id="nameInput" placeholder="Твоё имя" value="Грокс">
+        <button onclick="showJapaneseName()">Показать имя</button>
+        
+        <h2 id="japaneseName" class="name"></h2>
+        
+        <div class="weather-section">
+            <div class="city-selector">
+                <button onclick="getLocationWeather()" class="geo-btn">📍 Мой город</button>
+                
+                <h3>Поиск города:</h3>
+                <input type="text" id="searchCity" placeholder="Введи название города..." />
+                <button onclick="searchWeather()">🔍 Поиск</button>
+                
+                <h3>или выбери предложенный:</h3>
+                <select id="citySelect" onchange="getWeather()">
+                    <option value="Tokyo">Токио 🗼</option>
+                    <option value="Kyoto">Киото 🏯</option>
+                    <option value="Osaka">Осака 🌃</option>
+                    <option value="Hiroshima">Хиросима ☮</option>
+                    <option value="Sapporo">Саппоро ❄</option>
+                </select>
+            </div>
+            
+            <div class="weather">
+                <p>Погода в <span id="city">Токио</span>:</p>
+                <p class="temp" id="temp">--°C</p>
+                <p class="desc" id="desc">Загрузка...</p>
+                
+                <div class="weather-details">
+                    <div class="detail-box">
+                        <p class="detail-label">Ощущается</p>
+                        <p class="detail-value" id="feelsLike">--°C</p>
+                    </div>
+                    <div class="detail-box">
+                        <p class="detail-label">💧 Влажность</p>
+                        <p class="detail-value" id="humidity">--%</p>
+                    </div>
+                    <div class="detail-box">
+                        <p class="detail-label">💨 Ветер</p>
+                        <p class="detail-value" id="wind">-- м/с</p>
+                    </div>
+                    <div class="detail-box">
+                        <p class="detail-label">⚙ Давление</p>
+                        <p class="detail-value" id="pressure">-- гПа</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="forecast-section">
+            <h2>📅 Прогноз на 5 дней:</h2>
+            <div class="forecast-grid" id="forecastGrid">
+                <!-- Заполняется JS -->
+            </div>
+        </div>
+
+        <div class="update-info">
+            <p>⏰ Обновление: <span id="updateTime">--:--</span></p>
+            <button onclick="manualUpdate()" class="refresh-btn">🔄 Обновить сейчас</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

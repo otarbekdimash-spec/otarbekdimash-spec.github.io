@@ -1,0 +1,335 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+h1 { 
+    color: #667eea; 
+    font-size: 3em;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.subtitle { 
+    color: #666; 
+    font-style: italic; 
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+input[type="text"]:not(#searchCity) {
+    padding: 15px;
+    width: 70%;
+    border: 3px solid #667eea;
+    border-radius: 15px;
+    font-size: 18px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+input[type="text"]:not(#searchCity):focus {
+    border-color: #764ba2;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+    outline: none;
+}
+
+button {
+    padding: 15px 35px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px 5px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.name { 
+    font-size: 48px; 
+    color: #667eea; 
+    margin: 30px 0; 
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.weather-section {
+    margin-top: 40px;
+}
+
+.city-selector {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9ff;
+    border-radius: 15px;
+}
+
+.city-selector h3 {
+    color: #667eea;
+    margin: 15px 0 10px 0;
+    font-size: 18px;
+}
+
+#citySelect {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    cursor: pointer;
+    background: white;
+    color: #333;
+    width: 100%;
+    max-width: 400px;
+    transition: 0.3s;
+}
+
+#citySelect:hover {
+    border-color: #764ba2;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+}
+
+#searchCity {
+    padding: 15px;
+    width: 100%;
+    border: 3px solid #667eea;
+    border-radius: 15px;
+    font-size: 18px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+#searchCity:focus {
+    border-color: #764ba2;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+    outline: none;
+}
+
+.geo-btn {
+    width: 100%;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.geo-btn:hover {
+    background: linear-gradient(135deg, #f5576c, #f093fb);
+}
+
+.weather { 
+    margin-top: 40px; 
+    font-size: 24px; 
+}
+
+.weather p:first-child {
+    font-size: 20px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.temp { 
+    font-size: 72px; 
+    font-weight: bold; 
+    color: #667eea; 
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.desc {
+    font-size: 28px;
+    color: #555;
+    margin: 20px 0;
+}
+
+.feels-like {
+    font-size: 18px;
+    color: #888;
+    margin-top: 15px;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.detail-box {
+    background: linear-gradient(135deg, #f8f9ff, #f0f2ff);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #e0e7ff;
+    transition: 0.3s;
+}
+
+.detail-box:hover {
+    border-color: #667eea;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+.detail-label {
+    font-size: 14px;
+    color: #999;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.detail-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #667eea;
+    margin: 0;
+}
+
+/* Прогноз */
+.forecast-section {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.forecast-section h2 {
+    color: #667eea;
+    margin: 0 0 20px 0;
+    font-size: 24px;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.forecast-card {
+    background: linear-gradient(135deg, #f8f9ff, #f0f2ff);
+    padding: 18px;
+    border-radius: 15px;
+    border: 2px solid #e0e7ff;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.forecast-card:hover {
+    border-color: #667eea;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+    transform: translateY(-5px);
+}
+
+.forecast-day {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.forecast-icon {
+    font-size: 40px;
+    margin: 12px 0;
+}
+
+.forecast-temp {
+    font-size: 22px;
+    font-weight: bold;
+    color: #667eea;
+    margin: 8px 0;
+}
+
+.forecast-desc {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+}
+
+/* Обновление */
+.update-info {
+    margin-top: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9ff, #f0f2ff);
+    border-radius: 15px;
+    border: 2px solid #e0e7ff;
+    font-size: 14px;
+    color: #666;
+}
+
+.update-info p {
+    margin: 8px 0;
+}
+
+.refresh-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.refresh-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    input[type="text"]:not(#searchCity) {
+        width: 100%;
+    }
+    
+    .forecast-grid {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    }
+    
+    .weather-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .temp {
+        font-size: 56px;
+    }
+    
+    button {
+        width: 100%;
+        font-size: 16px;
+    }
+}
